@@ -1,11 +1,19 @@
 {
   "name": "package.json",
   "version": "1.0.0",
-  "description": "\"\"",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch main.scss:styles.css --style compressed"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SarahOPC/SarahRaguin_3_30082021.git"
+  },
   "author": "richa",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SarahOPC/SarahRaguin_3_30082021/issues"
+  },
+  "homepage": "https://github.com/SarahOPC/SarahRaguin_3_30082021#readme"
 }

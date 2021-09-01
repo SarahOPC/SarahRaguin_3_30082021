@@ -1,97 +1,111 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF_8">
-        <title>Ohmyfood - Fine cuisine des restaurants gastronomiques sans attente</title>
-        <meta name="description" content="Commande de repas gastronomiques en ligne - accueil">
-        <meta name="keywords" content="HTML, CSS">
-        <meta name="author" content="ohmyfood">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/e98fa15a44.js" crossorigin="anonymous" defer></script>
-        <link rel="stylesheet" href="../css/styles.scss"/>
-    </head>
 
-    <body>
-        <header>
-            <a href="#" target="_blank"><img src="../images/ohmyfood@2x.svg" alt="logo ohmyfood"/></a>
-        </header>
+<head>
+    <meta charset="UTF_8">
+    <title>Ohmyfood - Fine cuisine des restaurants gastronomiques sans attente</title>
+    <meta name="description" content="Commande de repas gastronomiques en ligne - accueil">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="ohmyfood">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e98fa15a44.js" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
 
-        <section>
-            <i class="fas fa-map-marker-alt"></i><input type="text" name="city" placeholder="Paris, Belleville"/>
+<body>
+    <header>
+        <a href="#" target="_blank"><img src="../images/ohmyfood@2x.svg" alt="logo ohmyfood" /></a>
+    </header>
+
+    <section>
+        <div class="input"><i class="fas fa-map-marker-alt"></i><input type="text" name="city" placeholder="Paris, Belleville" /></div>
+        <div class="info">
             <h1>Réservez le menu qui vous convient</h1>
             <h2>Découvrez des restaurants d'exception, sélectionnés par nos soins</h2>
             <p>Explorez nos restaurants</p>
+        </div>
 
-            <nav>
-                <div class="filters">
-                    <div class="filter-title">Fonctionnement</div>
-                    <div class="filter-item">
-                        <p>1</p>
-                        <div class="filter-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <div class="filter-text">Choisissez un restaurant</div>
-                    </div>
-                    <div class="filter-item">
-                        <p>2</p>
-                        <div class="filter-icon"><i class="fas fa-ellipsis-v"></i><i class="fas fa-bars"></i></div>
-                        <div class="filter-text">Composez votre menu</div>
-                    </div>
-                    <div class="filter-item">
-                        <p>3</p>
-                        <div class="filter-icon"><i class="fas fa-store"></i></div>
-                        <div class="filter-text">Dégustez au restaurant</div>
-                    </div>
+        <nav>
+            <div class="filters">
+                <div class="filter-title">Fonctionnement</div>
+                <div class="filter-item">
+                    <p>1</p>
+                    <div class="filter-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="filter-text">Choisissez un restaurant</div>
                 </div>
-            </nav>
-            
-        </section>
-        
-        <main>
-            <h2>restaurants</h2>
-            <div class="resto-first"><a href="index_menu_lapalettedugoût.html">Menu La palette du goût</a>
-                <img src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût"/>
-                <div class="capsule">Nouveau</div>
+                <div class="filter-item">
+                    <p>2</p>
+                    <div class="filter-icon"><i class="fas fa-ellipsis-v"></i><i class="fas fa-bars"></i></div>
+                    <div class="filter-text">Composez votre menu</div>
+                </div>
+                <div class="filter-item">
+                    <p>3</p>
+                    <div class="filter-icon"><i class="fas fa-store"></i></div>
+                    <div class="filter-text">Dégustez au restaurant</div>
+                </div>
+            </div>
+        </nav>
+
+    </section>
+
+    <main>
+        <h2>Restaurants</h2>
+        <a href="index_menu_lapalettedugoût.html">
+            <div class="resto-first">
+                <img src="../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût" />
                 <div class="caption">
+                    <div class="capsule">Nouveau</div>
                     <div class="title">La palette du goût</div>
                     <div class="city">Ménilmontant</div>
                     <i class="far fa-heart"></i>
                 </div>
             </div>
-            <div class="resto-second"><a href="index_menu_lanoteenchantee.html">Menu La note enchantée</a>
-                <img src="../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée"/>
-                <div class="capsule">Nouveau</div>
+        </a>
+        <a href="index_menu_lanoteenchantee.html">
+            <div class="resto-second">
+                <img src="../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée" />
                 <div class="caption">
+                    <div class="capsule">Nouveau</div>
                     <div class="title">La note enchantée</div>
                     <div class="city">Charonne</div>
                     <i class="far fa-heart"></i>
                 </div>
             </div>
-            <div class="resto-third"><a href="index_menu_àlafrançaise.html">Menu À la française</a>
-                <img src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française"/>
+        </a>
+        <a href="index_menu_àlafrançaise.html">
+            <div class="resto-third">
+                <img src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française" />
                 <div class="caption">
                     <div class="title">À la française</div>
                     <div class="city">Cité Rouge</div>
                     <i class="far fa-heart"></i>
                 </div>
             </div>
-            <div class="resto-fourth"><a href="index_menu_ledelicedessens.html">Menu Le délice des sens</a>
-                <img src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens"/>
+        </a>
+        <a href="index_menu_ledelicedessens.html">
+            <div class="resto-fourth">
+                <img src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                    alt="Le délice des sens" />
                 <div class="caption">
                     <div class="title">Le délice des sens</div>
                     <div class="city">Folie-Méricourt</div>
                     <i class="far fa-heart"></i>
                 </div>
             </div>
-        </main>
+        </a>
+    </main>
 
-        <footer>
-            <img src="../images/ohmyfood@2x.svg" alt="logo ohmyfood"/>
-            <a href="#" target="_blank"><i class="fas fa-utensils"></i>Proposer un restaurant</a>
-            <a href="#" target="_blank"><i class="fas fa-hands-helping"></i> Devenir partenaire</a>
-            <a href="#" target="_blank">Mentions légales</a>
-            <a href="mailto:sarahraguin@gmail.com">Contact</a>
-        </footer>
-    </body>
+    <footer>
+        <!--<img src="../images/ohmyfood@2x.svg" alt="logo ohmyfood" />-->
+        <p class="title">ohmyfood</p>
+        <a href="#" target="_blank"><i class="fas fa-utensils"></i>Proposer un restaurant</a>
+        <a href="#" target="_blank"><i class="fas fa-hands-helping"></i>Devenir partenaire</a>
+        <a href="#" target="_blank">Mentions légales</a>
+        <a href="mailto:sarahraguin@gmail.com">Contact</a>
+    </footer>
+</body>
+
 </html>
