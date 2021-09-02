@@ -10,18 +10,31 @@ header, .filter-title, main h2
     font-family: "Shirkhand", Arial, Helvetica, sans-serif;
 }
 
+*
+{
+    background-color: #F2F2F2;
+}
+
+header, .filters, .filter-title
+{
+    background-color: #FFFFFF;
+}
+
 header
 {
     display: flex;
     justify-content: center;
+    padding-bottom: 3%;
+    padding-top: 3%;
 }
 
 input
 {
     border: hidden;
     padding-left: 3%;
-    background-color: #E8E8E8;
+    background-color: transparent;
     font-size: 1.1em;
+    font-weight: 700;
 }
 
 input::placeholder
@@ -35,40 +48,122 @@ input::placeholder
     text-align: center;
     padding-top: 3%;
     padding-bottom: 3%;
-    border-top-style: inset;
-    border-top-color: #DBDBDB;
-}
-.fa-map-marker-alt
-{
-    padding-left: 25%;
+    box-shadow: inset 0em 0.1em lightgrey;
 }
 
-.search_and_info, nav
+.fa-map-marker-alt
+{
+    padding-left: 24%;
+    background-color: transparent;
+}
+
+h1, h2, .info p, nav
 {
     text-align: center;
+}
+
+h1
+{
+    font-size: 1.5em;
+    padding: 0em 0.8em;
+}
+
+h2
+{
+    font-weight: 100;
+    font-size: 1.1em;
+    line-height: 100%;
+}
+
+.info, .filters
+{
+    padding-bottom: 10%;
+}
+
+.info
+{
+    line-height: 250%;
+    text-align: -webkit-center;
+}
+
+.info p
+{
+    font-size: 1.1em;
+    border: 0.1em solid;
+    border-radius: 3em;
+    color: #FFFFFF;
+    font-weight: 500;
+    background: linear-gradient($secondary-color, #9733EE);
+    box-shadow: 0em 0.4em 0.5em lightgrey;
+    width: fit-content;
+    padding: 3% 7%;
+}
+
+.filter-title
+{
+    text-align: left;
+    padding-left: 8%;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-bottom: 3%;
+    padding-top: 15%;
 }
 
 .filter-item
 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: baseline;
+    font-size: 1.1em;
+    font-weight: 700;
+    border: 0.1em solid transparent;
+    border-radius: 1em;
+    margin-left: 9%;
+    margin-top: 7%;
+    box-shadow: 0em 0.4em 0.5em lightgrey, 0 -0.05em 0.5em lightgrey;
+    position: relative;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    padding-left: 7%;
+    width: 75%;
+}
+
+.filter-item p
+{
+    position: absolute;
+    left: -5%;
+    top: 10%;
+    border: 0.1em solid #9A0FCE;
+    border-radius: 2em;
+    background-color: #9A0FCE;
+    padding: 0.05em 0.3em 0.05em 0.3em;
+    font-size: 0.9em;
+    color: #FFFFFF;
+    font-weight: 100;
 }
 
 .filter-icon
 {
-    padding-left: 5%;
     padding-right: 5%;
+    color: #808080;
 }
 
-.filter-icon:nth-child(2)
+.filter-item:nth-child(3) .filter-icon
 {
-    font-size: 85%;
+    font-size: 75%;
 }
 
 .resto
 {
     text-align: center;
+}
+
+main h2
+{
+    font-size: 1.5em;
+    text-align: left;
+    font-weight: 700;
+    padding-left: 7%;
 }
 
 main img
@@ -157,6 +252,7 @@ footer a
     text-decoration: none;
     color: #FFFFFF;
     padding-top: 5%;
+    background-color: #2F2F2F;
 }
 
 footer img
@@ -172,6 +268,7 @@ footer .title
     font-style: italic;
     font-weight: bold;
     margin-block-start: 0em;
+    background-color: #2F2F2F;
 }
 
 footer .fa-hands-helping
@@ -182,4 +279,5 @@ footer .fa-hands-helping
 footer .fas
 {
     padding-right: 5%;
+    background-color: #2F2F2F;
 }
