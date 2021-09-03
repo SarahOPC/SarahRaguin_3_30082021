@@ -1,0 +1,176 @@
+@mixin heading-positionning {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+@mixin input-coloring {
+    border: hidden;
+    padding-left: 3%;
+    background-color: transparent;
+    font-size: 1.1em;
+    font-weight: 700;
+
+        &::placeholder{
+            color: #000;
+        }
+}
+
+@mixin input-positionning {
+    background-color: #E8E8E8;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    box-shadow: inset 0em 0.1em lightgrey;
+}
+
+@mixin icon-input-positionning {
+    padding-left: 24%;
+    background-color: transparent;
+}
+
+@mixin h1-positionning {
+    font-size: 1.5em;
+    padding: 0em 0.8em;
+    line-height: 100%;
+}
+
+@mixin h2-positionning {
+    font-weight: 100;
+    font-size: 1.1em;
+    line-height: 100%;
+}
+
+@mixin explore-button {
+    font-size: 1.1em;
+    border: 0.1em solid;
+    border-radius: 3em;
+    color: $white-background;
+    font-weight: 500;
+    background: linear-gradient($secondary-color, $darken-secondary-color);
+    box-shadow: 0em 0.4em 0.5em $grey-shadow;
+    width: fit-content;
+    padding: 3% 7%;
+}
+
+@mixin filter-title-positionning {
+    text-align: left;
+    padding-left: 8%;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-bottom: 3%;
+    padding-top: 15%;
+}
+
+@mixin filter-item-positionning {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    font-size: 1.1em;
+    font-weight: 700;
+    border: 0.1em solid transparent;
+    border-radius: 1em;
+    margin-left: 9%;
+    margin-top: 7%;
+    box-shadow: 0em 0.4em 0.5em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
+    position: relative;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    padding-left: 7%;
+    width: 75%;
+}
+
+@mixin filter-number-formatting {
+    position: absolute;
+    left: -5%;
+    top: 10%;
+    border: 0.1em solid $color-circle-number;
+    border-radius: 2em;
+    background-color: $color-circle-number;
+    padding: 0.05em 0.3em 0.05em 0.3em;
+    font-size: 0.9em;
+    color: $white-background;
+    font-weight: 100;
+}
+
+@mixin main-h2-text-sizing {
+    font-size: 1.5em;
+    text-align: left;
+    font-weight: 700;
+    padding-left: 7%;
+}
+
+@mixin main-img-sizing {
+    object-fit: cover;
+    width: 100%;
+    height: 12em;
+    border-radius: 1.5em 1.5em 0em 0em;
+}
+
+@mixin resto-sizing {
+    border: 0em solid $white-background;
+    box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
+    margin-top: 5%;
+    border-radius: 1.5em;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin capsule-positionning {
+    background-color: $capsule-color;
+    width: fit-content;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    color: $darken-capsule-color;
+    position: absolute;
+    top: -235%;
+    right: 10%;
+}
+
+@mixin a-formatting {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #000;
+}
+
+@mixin footer-positionning-and-coloring {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12%;
+    padding-left: 7%;
+    background-color: $footer-grey-background;
+    padding-top: 10%;
+    padding-bottom: 12%;
+}
+
+@mixin a-footer-coloring {
+    text-decoration: none;
+    color: $white-background;
+    padding-top: 5%;
+    background-color: $footer-grey-background;
+}
+
+@mixin footer-title-style {
+    color: $white-background;
+    font-family: "Shirkhand", Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    margin-block-start: 0em;
+    background-color: $footer-grey-background;
+}
+
+/*
+@mixin tablette-only {
+    @media  screen and (max-width: map-get($breakpoint-tablette, tablette)){
+
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (max-width: map-get($breakpoint-desktop, desktop)) {
+        
+    }
+}
+*/

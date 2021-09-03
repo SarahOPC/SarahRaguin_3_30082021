@@ -12,49 +12,32 @@ header, .filter-title, main h2
 
 *
 {
-    background-color: #F2F2F2;
+    background-color: $grey-background;
 }
 
 header, .filters, .filter-title
 {
-    background-color: #FFFFFF;
+    background-color: $white-background;
 }
 
 header
 {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 3%;
-    padding-top: 3%;
+    @include heading-positionning;
 }
 
-input
-{
-    border: hidden;
-    padding-left: 3%;
-    background-color: transparent;
-    font-size: 1.1em;
-    font-weight: 700;
-}
 
-input::placeholder
-{
-    color: #000;
+input{
+    @include input-coloring;
 }
 
 .input
 {
-    background-color: #E8E8E8;
-    text-align: center;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    box-shadow: inset 0em 0.1em lightgrey;
+    @include input-positionning;
 }
 
 .fa-map-marker-alt
 {
-    padding-left: 24%;
-    background-color: transparent;
+    @include icon-input-positionning;
 }
 
 h1, h2, .info p, nav
@@ -64,15 +47,12 @@ h1, h2, .info p, nav
 
 h1
 {
-    font-size: 1.5em;
-    padding: 0em 0.8em;
+    @include h1-positionning;
 }
 
 h2
 {
-    font-weight: 100;
-    font-size: 1.1em;
-    line-height: 100%;
+    @include h2-positionning;
 }
 
 .info, .filters
@@ -80,72 +60,35 @@ h2
     padding-bottom: 10%;
 }
 
-.info
-{
+.info{
     line-height: 250%;
     text-align: -webkit-center;
+    text-align: -moz-center;
+
+        & p{
+            @include explore-button;
+        }
 }
 
-.info p
-{
-    font-size: 1.1em;
-    border: 0.1em solid;
-    border-radius: 3em;
-    color: #FFFFFF;
-    font-weight: 500;
-    background: linear-gradient($secondary-color, #9733EE);
-    box-shadow: 0em 0.4em 0.5em lightgrey;
-    width: fit-content;
-    padding: 3% 7%;
-}
+.filters{
 
-.filter-title
-{
-    text-align: left;
-    padding-left: 8%;
-    font-size: 1.5em;
-    font-weight: 700;
-    padding-bottom: 3%;
-    padding-top: 15%;
-}
+    .filter-title{
+        @include filter-title-positionning;
+    }
 
-.filter-item
-{
-    display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
-    font-size: 1.1em;
-    font-weight: 700;
-    border: 0.1em solid transparent;
-    border-radius: 1em;
-    margin-left: 9%;
-    margin-top: 7%;
-    box-shadow: 0em 0.4em 0.5em lightgrey, 0 -0.05em 0.5em lightgrey;
-    position: relative;
-    padding-top: 7%;
-    padding-bottom: 7%;
-    padding-left: 7%;
-    width: 75%;
-}
-
-.filter-item p
-{
-    position: absolute;
-    left: -5%;
-    top: 10%;
-    border: 0.1em solid #9A0FCE;
-    border-radius: 2em;
-    background-color: #9A0FCE;
-    padding: 0.05em 0.3em 0.05em 0.3em;
-    font-size: 0.9em;
-    color: #FFFFFF;
-    font-weight: 100;
-}
-
-.filter-icon
-{
-    padding-right: 5%;
-    color: #808080;
+    .filter-item
+    {
+        @include filter-item-positionning;
+    }
+        & p
+        {
+            @include filter-number-formatting;
+        }
+    .filter-icon
+    {
+        padding-right: 5%;
+        color: $color-filter-icon;
+    }
 }
 
 .filter-item:nth-child(3) .filter-icon
@@ -153,131 +96,94 @@ h2
     font-size: 75%;
 }
 
-.resto
-{
-    text-align: center;
+
+main {
+    .resto
+    {
+        text-align: center;
+    }
+
+    & h2
+    {
+        @include main-h2-text-sizing;
+    }
+    
+    & img
+    {
+        @include main-img-sizing
+    }
+    
+    .resto-first, .resto-second, .resto-third, .resto-fourth
+    {
+        @include resto-sizing;
+
+            .capsule
+            {
+                @include capsule-positionning;
+            }
+            
+            .caption
+            {
+                padding-left: 4%;
+                line-height: 150%;
+                position: relative;
+                
+                .title
+                {
+                    font-weight: 900;
+                    font-size: 1.1em;
+                    padding-top: 4%;
+                }
+                .city
+                {
+                    font-size: 1.1em;
+                    padding-bottom: 3%;
+                }
+                
+                .far
+                {
+                    position: absolute;
+                    top: 30%;
+                    right: 10%;
+                    font-size: 1.5em;
+                }
+            }
+    }
+        
+    & a
+    {
+        @include a-formatting;
+    }
 }
 
-main h2
-{
-    font-size: 1.5em;
-    text-align: left;
-    font-weight: 700;
-    padding-left: 7%;
-}
-
-main img
-{
-    object-fit: cover;
-    width: 100%;
-    height: 12em;
-    border-radius: 1.5em 1.5em 0em 0em;
-}
-
-.resto-first, .resto-second, .resto-third, .resto-fourth
-{
-    border: 0em solid #FFFFFF;
-    box-shadow: 0.3em 0.3em 0.5em #B5B5B5;
-    margin-top: 5%;
-    border-radius: 1.5em;
-    width: 100%;
-    height: 100%;
-}
-
-.resto-first a, .resto-second a, .resto-third a, .resto-fourth a
-{
-    width: 100%;
-    height: 100%;
-}
-
-.resto-first .capsule, .resto-second .capsule, .resto-third .capsule, .resto-fourth .capsule
-{
-    background-color: #99E2D0;
-    width: fit-content;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    color: #63AA9A;
-    position: absolute;
-    top: -235%;
-    right: 10%;
-}
-
-a
-{
-    text-decoration: none;
-    color: #000;
-}
-
-.caption
-{
-    padding-left: 4%;
-    line-height: 150%;
-    position: relative;
-}
-
-.caption .title
-{
-    font-weight: 900;
-    font-size: 1.1em;
-    padding-top: 4%;
-}
-
-.caption .city
-{
-    font-size: 1.1em;
-    padding-bottom: 3%;
-}
-
-.caption .far
-{
-    position: absolute;
-    top: 30%;
-    right: 10%;
-    font-size: 1.5em;
-}
-
-footer
-{
-    display: flex;
-    flex-direction: column;
-    margin-top: 12%;
-    padding-left: 7%;
-    background-color: #2F2F2F;
-    padding-top: 10%;
-    padding-bottom: 12%;
-}
-
-footer a
-{
-    text-decoration: none;
-    color: #FFFFFF;
-    padding-top: 5%;
-    background-color: #2F2F2F;
-}
-
-footer img
-{
-    width: 30%;
-    height: auto;
-}
-
-footer .title
-{
-    color: #FFFFFF;
-    font-family: "Shirkhand", Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-weight: bold;
-    margin-block-start: 0em;
-    background-color: #2F2F2F;
-}
-
-footer .fa-hands-helping
-{
-    font-size: x-small;
-}
-
-footer .fas
-{
-    padding-right: 5%;
-    background-color: #2F2F2F;
+footer{
+    
+    @include footer-positionning-and-coloring;
+    
+    & a
+    {
+        @include a-footer-coloring;
+    }
+    
+    & img
+    {
+        width: 30%;
+        height: auto;
+    }
+    
+    .title
+    {
+        @include footer-title-style;
+    }
+    
+    .fa-hands-helping
+    {
+        font-size: x-small;
+    }
+    
+    .fas
+    {
+        padding-right: 5%;
+        background-color: $footer-grey-background;
+    }
 }
