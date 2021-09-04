@@ -10,14 +10,9 @@ header, .filter-title, main h2
     font-family: "Shirkhand", Arial, Helvetica, sans-serif;
 }
 
-*
+.info, .filter-item, .container-accueil, .container
 {
     background-color: $grey-background;
-}
-
-header, .filters, .filter-title
-{
-    background-color: $white-background;
 }
 
 header
@@ -107,6 +102,7 @@ h2
     line-height: 250%;
     text-align: -webkit-center;
     text-align: -moz-center;
+    padding-top: 7%;
 
     & p
     {
@@ -181,14 +177,20 @@ h2
 
 main
 {
+    .container-accueil
+    {
+        padding-top: 7%;
+        padding-bottom: 17%;
+    }
+
     .resto
     {
         border: 0em solid $white-background;
         box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
         margin-top: 5%;
         border-radius: 1.5em;
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 90%;
         position: relative;
         
         .capsule
@@ -254,13 +256,29 @@ main
         text-decoration: none;
         color: #000;
     }
+
+    .container .mealstarter div
+    {
+        border: 0em solid $white-background;
+        box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
+        margin-top: 5%;
+        border-radius: 1.5em;
+        background-color: $white-background;
+        padding-left: 3%;
+
+        & p:first-child
+        {
+            font-size: 1.1em;
+            padding-top: 3%;
+            font-weight: 700;
+        }
+    }
 }
 
 footer
 {    
     display: flex;
     flex-direction: column;
-    margin-top: 12%;
     padding-left: 7%;
     background-color: $footer-grey-background;
     padding-top: 10%;
