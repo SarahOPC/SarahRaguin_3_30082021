@@ -22,22 +22,50 @@ header, .filters, .filter-title
 
 header
 {
-    @include heading-positionning;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3%;
+    padding-top: 3%;
+
+    & a
+    {
+        background-color: $white-background;
+
+        & img
+        {
+            background-color: $white-background;
+        }
+    }
 }
 
 
-input{
-    @include input-coloring;
+input
+{
+    border: hidden;
+    padding-left: 3%;
+    background-color: transparent;
+    font-size: 1.1em;
+    font-weight: 700;
+
+    &::placeholder
+    {
+        color: #000;
+    }
 }
 
 .input
 {
-    @include input-positionning;
+    background-color: #E8E8E8;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    box-shadow: inset 0em 0.1em lightgrey;
 }
 
 .fa-map-marker-alt
 {
-    @include icon-input-positionning;
+    padding-left: 24%;
+    background-color: transparent;
 }
 
 h1, h2, .info p, nav
@@ -47,12 +75,16 @@ h1, h2, .info p, nav
 
 h1
 {
-    @include h1-positionning;
+    font-size: 1.5em;
+    padding: 0em 0.8em;
+    line-height: 100%;
 }
 
 h2
 {
-    @include h2-positionning;
+    font-weight: 100;
+    font-size: 1.1em;
+    line-height: 100%;
 }
 
 .info, .filters
@@ -60,30 +92,70 @@ h2
     padding-bottom: 10%;
 }
 
-.info{
+.info
+{
     line-height: 250%;
     text-align: -webkit-center;
     text-align: -moz-center;
 
-        & p{
-            @include explore-button;
-        }
+    & p
+    {
+        font-size: 1.1em;
+        border-radius: 3em;
+        color: $white-background;
+        font-weight: 500;
+        background: linear-gradient($secondary-color, $darken-secondary-color);
+        box-shadow: 0em 0.4em 0.5em $grey-shadow;
+        width: fit-content;
+        padding: 3% 7%;
+    }
 }
 
-.filters{
-
-    .filter-title{
-        @include filter-title-positionning;
+.filters
+{
+    .filter-title
+    {
+        text-align: left;
+        padding-left: 8%;
+        font-size: 1.5em;
+        font-weight: 700;
+        padding-bottom: 3%;
+        padding-top: 15%;
     }
 
     .filter-item
     {
-        @include filter-item-positionning;
-    }
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        font-size: 1.1em;
+        font-weight: 700;
+        border: 0.1em solid transparent;
+        border-radius: 1em;
+        margin-left: 9%;
+        margin-top: 7%;
+        box-shadow: 0em 0.4em 0.5em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
+        position: relative;
+        padding-top: 7%;
+        padding-bottom: 7%;
+        padding-left: 7%;
+        width: 75%;
+
         & p
         {
-            @include filter-number-formatting;
+            position: absolute;
+            left: -5%;
+            top: 10%;
+            border: 0.1em solid $color-circle-number;
+            border-radius: 2em;
+            background-color: $color-circle-number;
+            padding: 0.05em 0.3em 0.05em 0.3em;
+            font-size: 0.9em;
+            color: $white-background;
+            font-weight: 100;
         }
+    }
+
     .filter-icon
     {
         padding-right: 5%;
@@ -97,83 +169,106 @@ h2
 }
 
 
-main {
+main
+{
     .resto
     {
-        text-align: center;
+        border: 0em solid $white-background;
+        box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
+        margin-top: 5%;
+        border-radius: 1.5em;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        
+        .capsule
+        {
+            background-color: $capsule-color;
+            width: fit-content;
+            padding-left: 1.5%;
+            padding-right: 1.5%;
+            color: $darken-capsule-color;
+            position: absolute;
+            top: 10%;
+            right: 10%;
+        }
+        
+        .caption
+        {
+            padding-left: 4%;
+            line-height: 150%;
+            
+            .title
+            {
+                font-weight: 900;
+                font-size: 1.1em;
+                padding-top: 4%;
+            }
+            .city
+            {
+                font-size: 1.1em;
+                padding-bottom: 3%;
+            }
+            
+        }
     }
 
+    .far
+    {
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+        font-size: 1.5em;
+    }
+    
     & h2
     {
-        @include main-h2-text-sizing;
+        font-size: 1.5em;
+        text-align: left;
+        font-weight: 700;
+        padding-left: 7%;
     }
     
     & img
     {
-        @include main-img-sizing
+        object-fit: cover;
+        width: 100%;
+        height: 12em;
+        border-radius: 1.5em 1.5em 0em 0em;
     }
-    
-    .resto-first, .resto-second, .resto-third, .resto-fourth
-    {
-        @include resto-sizing;
 
-            .capsule
-            {
-                @include capsule-positionning;
-            }
-            
-            .caption
-            {
-                padding-left: 4%;
-                line-height: 150%;
-                position: relative;
-                
-                .title
-                {
-                    font-weight: 900;
-                    font-size: 1.1em;
-                    padding-top: 4%;
-                }
-                .city
-                {
-                    font-size: 1.1em;
-                    padding-bottom: 3%;
-                }
-                
-                .far
-                {
-                    position: absolute;
-                    top: 30%;
-                    right: 10%;
-                    font-size: 1.5em;
-                }
-            }
-    }
-        
     & a
     {
-        @include a-formatting;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #000;
     }
 }
 
-footer{
-    
-    @include footer-positionning-and-coloring;
+footer
+{    
+    display: flex;
+    flex-direction: column;
+    margin-top: 12%;
+    padding-left: 7%;
+    background-color: $footer-grey-background;
+    padding-top: 10%;
+    padding-bottom: 12%;
     
     & a
     {
-        @include a-footer-coloring;
+        text-decoration: none;
+        color: $white-background;
+        padding-top: 5%;
+        background-color: $footer-grey-background;
     }
     
     & img
     {
         width: 30%;
         height: auto;
-    }
-    
-    .title
-    {
-        @include footer-title-style;
+        background-color: $footer-grey-background;
     }
     
     .fa-hands-helping
