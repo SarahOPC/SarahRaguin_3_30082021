@@ -27,6 +27,7 @@ header
     padding-bottom: 3%;
     padding-top: 3%;
     text-align: center;
+    position: relative;
 
     & a
     {
@@ -36,6 +37,14 @@ header
         {
             background-color: $white-background;
         }
+    }
+
+    & i.fas.fa-arrow-left
+    {
+        position: absolute;
+        left: 7%;
+        top: 35%;
+        font-size: 1.3em;
     }
 }
 
