@@ -2,7 +2,8 @@
 
 section,
 main,
-footer {
+footer
+{
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
@@ -10,18 +11,21 @@ header,
 .filter-title,
 main h2,
 .name-restaurant,
-.title-menu {
+.title-menu
+{
   font-family: "Shirkhand", Arial, Helvetica, sans-serif;
 }
 
 .info,
 .filter-item,
 .container-accueil,
-.container {
+.container
+{
   background-color: $grey-background;
 }
 
-header {
+header
+{
   display: flex;
   justify-content: center;
   padding-bottom: 3%;
@@ -29,15 +33,18 @@ header {
   text-align: center;
   position: relative;
 
-  & a {
+  & a
+  {
     background-color: $white-background;
 
-    & img {
+    & img
+    {
       background-color: $white-background;
     }
   }
 
-  & i.fas.fa-arrow-left {
+  & i.fas.fa-arrow-left
+  {
     position: absolute;
     left: 7%;
     top: 35%;
@@ -45,62 +52,112 @@ header {
   }
 }
 
-input {
+section
+{
+  @media all and (min-width: $breakpoint-tablette){
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+input
+{
   border: hidden;
   padding-left: 3%;
   background-color: transparent;
   font-size: 1.1em;
   font-weight: 700;
+  
+  @media all and (min-width: $breakpoint-tablette){
+    text-align: center;
+    width: 75%;
+  }
 
-  &::placeholder {
+  &::placeholder
+  {
     color: #000;
   }
 }
 
-.input {
+.input
+{
   background-color: #e8e8e8;
   text-align: center;
   padding-top: 3%;
   padding-bottom: 3%;
   box-shadow: inset 0em 0.1em lightgrey;
+
+  @media all and (min-width: $breakpoint-tablette){
+    background-color: transparent;
+    box-shadow: inset 0em 0em transparent;
+    width: 20%;
+  }
+
+  @media all and (min-width: $breakpoint-desktop){
+    width: 15%;
+  }
 }
 
-.fa-map-marker-alt {
+.fa-map-marker-alt
+{
   padding-left: 24%;
   background-color: transparent;
+
+  @media all and (min-width: $breakpoint-tablette){
+      padding-left: 5%;
+      font-size: 5em;
+      padding-bottom: 30%;
+  }
 }
 
 h1,
 h2,
 .info p,
-nav {
+nav
+{
   text-align: center;
 }
 
-h1 {
+h1
+{
   font-size: 1.5em;
   padding: 0em 0.8em;
   line-height: 100%;
 }
 
-h2 {
+h2
+{
   font-weight: 100;
   font-size: 1.1em;
   line-height: 100%;
+  
+  @media all and (min-width: $breakpoint-tablette){
+    line-height: 500%;
+  }
 }
 
 .info,
-.filters {
+.filters
+{
   padding-bottom: 10%;
 }
 
-.info {
+.info
+{
   line-height: 250%;
   text-align: -webkit-center;
   text-align: -moz-center;
   padding-top: 7%;
 
-  & p {
+  @media all and (min-width: $breakpoint-tablette){
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 15%;
+  }
+
+  & p
+  {
     font-size: 1.1em;
     border-radius: 3em;
     color: $white-background;
@@ -112,8 +169,10 @@ h2 {
   }
 }
 
-.filters {
-  .filter-title {
+.filters
+{
+  .filter-title
+  {
     text-align: left;
     padding-left: 8%;
     font-size: 1.5em;
@@ -122,7 +181,8 @@ h2 {
     padding-top: 15%;
   }
 
-  .filter-item {
+  .filter-item
+  {
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
@@ -138,8 +198,19 @@ h2 {
     padding-bottom: 7%;
     padding-left: 7%;
     width: 75%;
+    
+  @media all and (min-width: $breakpoint-tablette){
+    margin-left: 0%;
+    width: 95%;
+    margin-bottom: 25%;
+  }
 
-    & p {
+  @media all and (min-width: $breakpoint-desktop){
+    width: 110%;
+  }
+
+    & p
+    {
       position: absolute;
       left: -5%;
       top: 10%;
@@ -150,26 +221,48 @@ h2 {
       font-size: 0.9em;
       color: $white-background;
       font-weight: 100;
+
+      @media all and (min-width: $breakpoint-tablette){
+        display: none;
+      }
     }
   }
 
-  .filter-icon {
+  .filter-icon
+  {
     padding-right: 5%;
     color: $color-filter-icon;
   }
 }
 
-.filter-item:nth-child(3) .filter-icon {
+.filter-item:nth-child(3) .filter-icon
+{
   font-size: 75%;
 }
 
-main {
-  .container-accueil {
+main
+{
+  .container-accueil
+  {
     padding-top: 7%;
     padding-bottom: 17%;
+
+    @media all and (min-width: $breakpoint-tablette){
+      padding-top: 3%;
+      padding-bottom: 7%;
+    }
+
+    .item-accueil
+    {
+      @media all and (min-width: $breakpoint-tablette){
+        display: flex;
+        padding-top: 1%;
+      }
+    }
   }
 
-  .resto {
+  .resto
+  {
     border: 0em solid $white-background;
     box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
     margin-top: 5%;
@@ -179,7 +272,8 @@ main {
     position: relative;
     padding-left: 3%;
 
-    .capsule {
+    .capsule
+    {
       background-color: $capsule-color;
       width: fit-content;
       padding-left: 1.5%;
@@ -190,54 +284,77 @@ main {
       right: 10%;
     }
 
-    .caption {
+    .caption
+    {
       padding-left: 4%;
       line-height: 150%;
 
-      .title {
+      .title
+      {
         font-weight: 900;
         font-size: 1.1em;
         padding-top: 4%;
       }
-      .city {
+      .city
+      {
         font-size: 1.1em;
         padding-bottom: 3%;
       }
     }
   }
 
-  .far {
+  .far
+  {
     position: absolute;
     bottom: 10%;
     right: 10%;
     font-size: 1.5em;
   }
 
-  & h2 {
+  & h2
+  {
     font-size: 1.5em;
     text-align: left;
     font-weight: 700;
     padding-left: 7%;
+
+    @media all and (min-width: $breakpoint-tablette){
+      line-height: 100%;
+    }
   }
 
-  & img {
+  & img
+  {
     object-fit: cover;
     width: 100%;
     height: 12em;
     border-radius: 1.5em 1.5em 0em 0em;
   }
 
-  & a {
+  & a
+  {
     width: 100%;
     height: 100%;
     text-decoration: none;
     color: #000;
   }
+  .img-menu
+  {
+    height: 15em;
+    z-index: -1;
+    margin-bottom: -15%;
+    position: relative;
+    border-radius: 0em;
+  }
 
-  .container {
+  .container
+  {
     padding-bottom: 1%;
+    padding-top: 5%;
+    border-radius: 2.5em 2.5em 0em 0em;
 
-    .item {
+    .item
+    {
       border: 0em solid $white-background;
       box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
       margin-top: 5%;
@@ -246,29 +363,34 @@ main {
       width: 91%;
       padding-left: 3%;
 
-      .together {
+      .together
+      {
         display: flex;
         justify-content: space-between;
         padding-bottom: 5%;
 
-        .details {
+        .details
+        {
           font-size: 0.9em;
         }
 
-        .price {
+        .price
+        {
           padding-right: 5%;
           font-weight: 700;
         }
       }
 
-      & p {
+      & p
+      {
         font-size: 1.1em;
         padding-top: 3%;
         font-weight: 700;
       }
     }
 
-    .name-restaurant {
+    .name-restaurant
+    {
       font-size: 1.9em;
       font-style: italic;
       position: relative;
@@ -276,30 +398,36 @@ main {
       padding-left: 6%;
     }
 
-    .far.fa-heart {
+    .far.fa-heart
+    {
       font-size: 0.8em;
     }
 
-    .title-menu {
+    .title-menu
+    {
       padding-left: 6%;
       padding-top: 11%;
       border-bottom: 0.3em solid $tertiary-color;
 
-      &::after {
+      &::after
+      {
         width: 50%;
       }
     }
 
     .mealstarter,
     .meal,
-    .dessert {
+    .dessert
+    {
       padding-left: 5%;
     }
 
-    .container-command{
+    .container-command
+    {
         display: flex;
         justify-content: center;
-        .command {
+        .command
+        {
             border-radius: 3em;
             color: $white-background;
             background: linear-gradient($secondary-color, $darken-secondary-color);
@@ -313,7 +441,8 @@ main {
   }
 }
 
-footer {
+footer
+{
   display: flex;
   flex-direction: column;
   padding-left: 7%;
@@ -321,25 +450,51 @@ footer {
   padding-top: 10%;
   padding-bottom: 12%;
 
-  & a {
+  @media all and (min-width: $breakpoint-tablette){
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+  & p
+  {
+    margin-top: 5%;
+  }
+    
+  & a
+  {
     text-decoration: none;
     color: $white-background;
     padding-top: 5%;
     background-color: $footer-grey-background;
+
+    @media all and (min-width: $breakpoint-tablette){
+      padding-top: 1%;
+    }
   }
 
-  & img {
+  & img
+  {
     width: 30%;
     height: auto;
     background-color: $footer-grey-background;
+
+    @media all and (min-width: $breakpoint-tablette){
+      width: 12%;
+    }
   }
 
-  .fa-hands-helping {
+  .fa-hands-helping
+  {
     font-size: x-small;
   }
 
-  .fas {
+  .fas
+  {
     padding-right: 5%;
     background-color: $footer-grey-background;
+
+    @media all and (min-width: $breakpoint-tablette){
+      padding-right: 1%;
+    }
   }
 }
