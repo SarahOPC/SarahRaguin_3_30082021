@@ -8,8 +8,6 @@ footer
 }
 
 header,
-.filter-title,
-main h2,
 .name-restaurant
 {
   font-family: "Shirkhand", cursive;
@@ -209,14 +207,19 @@ h2
     width: 110%;
   }
 
+    &:hover{
+      box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
+      background-color: $white-background;
+    }
+
     & p
     {
       position: absolute;
       left: -5%;
       top: 10%;
-      border: 0.1em solid $color-circle-number;
+      border: 0.1em solid $primary-color;
       border-radius: 2em;
-      background-color: $color-circle-number;
+      background-color: $primary-color;
       padding: 0.05em 0.3em 0.05em 0.3em;
       font-size: 0.9em;
       color: $white-background;
@@ -303,12 +306,50 @@ main
     }
   }
 
-  .far
+  .fa-stack
   {
     position: absolute;
-    bottom: 10%;
-    right: 10%;
+    bottom: 4%;
+    right: 4%;
     font-size: 1.5em;
+  }
+
+  .fas.fa-circle
+  {
+    color: $grey-background;
+  }
+
+  .far.fa-heart
+  {
+    color: #000;
+    z-index: 1;
+    position: absolute;
+    bottom: 8%;
+    right: 10%;
+    font-size: 1.6em;
+  
+    &:hover, &:active, &:focus
+    {
+      color: $secondary-color;
+    }
+  }
+
+  .fas.fa-heart
+  {
+    background-color: $grey-background;
+    color: $grey-background;
+    
+    &:hover, &:active, &:focus
+    {
+    animation: heart-color 3s forwards;
+    }
+
+      @keyframes heart-color
+      {
+        from {color: $grey-background;}
+        to {color: $secondary-color;}
+      }
+    
   }
 
   & h2
