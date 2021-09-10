@@ -205,6 +205,7 @@ h2
 
 .filters
 {
+  
   .filter-title
   {
     text-align: left;
@@ -243,10 +244,12 @@ h2
     width: 110%;
   }
 
-    &:hover{
+    &:hover
+    {
       box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
       background-color: $white-background;
       animation: moving-button 0.9s ease-in-out;
+      color: $secondary-color;
     }
 
     & p
@@ -261,6 +264,11 @@ h2
       font-size: 0.9em;
       color: $white-background;
       font-weight: 100;
+
+      &:hover
+      {
+        animation: moving-button 0.9s ease-in-out;
+      }
 
       @media all and (min-width: $breakpoint-tablette){
         display: none;
