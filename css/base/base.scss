@@ -1,5 +1,20 @@
 /*Polices, normes à appliquer sur tout le site, box-sizing, ...*/
 
+.container_loading
+{
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.loading-spinner
+{
+  width: 50%;
+  height: 50%;
+  padding-top: 5%;
+}
+
 section,
 main,
 footer
