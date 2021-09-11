@@ -360,26 +360,30 @@ main
   .far.fa-heart
   {
     color: #000;
-    z-index: 1;
+    background-color: $grey-background;
     position: absolute;
     bottom: 8%;
-    right: 10%;
-    font-size: 1.6em;
-  
-    &:hover, &:active, &:focus
-    {
-      color: $secondary-color;
-    }
+    right: 26%;
+    font-size: 1.2em;
   }
 
   .fas.fa-heart
   {
-    background-color: $grey-background;
-    color: $grey-background;
-    
+    color: $secondary-color;
+    font-size: 1.2em;
+  }
+
+  .fa-stack-1x.fa-inverse
+  {
+    color: $secondary-color;
+    bottom: -15%;
+  }
+
+  .get-transparent
+  {
     &:hover, &:active, &:focus
     {
-    animation: heart-color 3s forwards;
+      animation: heart-color 1s forwards;
     }
   }
 
@@ -638,8 +642,8 @@ footer
 }
 
 @keyframes heart-color {
-  from {color: $grey-background;}
-  to {color: $secondary-color;}
+  from {opacity: 100%;}
+  to {opacity: 0%;}
 }
 
 @keyframes moving__title {
