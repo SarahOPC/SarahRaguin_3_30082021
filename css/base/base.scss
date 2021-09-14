@@ -1,23 +1,200 @@
 /*Polices, normes à appliquer sur tout le site, box-sizing, ...*/
 
-.container_loading
-{
+.container-loading {
+  width: 100%;
+  height: 100vh;
+  background: #232323;
   display: flex;
   justify-content: center;
-  align-content: stretch;
-  align-items: stretch;
+  align-items: center;
+  animation: go-away 2s 4.3s forwards;
+
+  .box {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .title-loading {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: $secondary-color;
+        position: absolute;
+        animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        display: flex;
+      }
+
+      h1 {
+        font-family: 'Shrikhand';
+        color: $white-background;
+        font-size: 32px;
+        -webkit-animation: mainFadeIn 2s forwards;
+        -o-animation: mainFadeIn 2s forwards;
+        animation: mainFadeIn 2s forwards;
+        animation-delay: 1.6s;
+        opacity: 0;
+        display: flex;
+        align-items: baseline;
+        position: relative;
+
+        span {
+          width:0px;
+          height: 0px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+
+          background: $primary-color;
+          -webkit-animation: load 0.6s cubic-bezier(.74, .06, .4, .92) forwards;
+          animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+          animation-delay: 2s;
+          margin-left: 5px;
+          margin-top: -10px;
+          position: absolute;
+          bottom: 13px;
+          right: -12px;
+
+        }
+      }
+    }
+
+    .role {
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      margin-top: -10px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: $primary-color;
+        position: absolute;
+        animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        animation-delay: 2s;
+        display: flex;
+      }
+
+      p {
+        animation: secFadeIn 2s forwards;
+        animation-delay: 3.2s;
+        opacity: 0;
+        font-weight: 400;
+        color: $tertiary-color;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+    }
+  }
 }
 
-.loading-spinner
-{
-  width: 50%;
-  height: 50%;
-  margin-top: 5%;
-  border-radius: 2em;
-  background-color: $white-background;
-  animation: loading 3s ease-out;
+@keyframes go-away {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
 }
 
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes secBlock {
+  0% {
+    width: 0%;
+    left: 0;
+
+  }
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: $secondary-color;
+    border: 0px solid #ddd;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    background: $secondary-color;
+    opacity: 1;
+    bottom: 45px;
+  }
+   65% {
+      width: 7px;
+    height: 7px;
+      bottom: 0px;
+      width: 15px
+   }
+   80% {
+      width: 10px;
+    height: 10px;
+      bottom: 20px
+   }
+  100% {
+    width: 7px;
+    height: 7px;
+    background: $secondary-color;
+    border: 0px solid #222;
+    bottom: 13px;
+
+  }
+}
+
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
 section,
 main,
 footer
@@ -180,12 +357,25 @@ h2
     font-weight: 500;
     background: linear-gradient($secondary-color, $darken-secondary-color);
     box-shadow: 0em 0.4em 0.5em $grey-shadow;
-    width: fit-content;
+    width: 43%;
+    overflow: hidden;
     padding: 3% 7%;
-
-    &:hover
-    {
-      animation: moving-button 0.9s ease-in-out;
+    position: relative;
+    
+    &:hover {
+      cursor: pointer;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -50%;
+        left: -50%;
+        right: -50%;
+        top: -50%;
+        background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+        transform: translate(-5em, 7.5em);
+        animation: moving-button 1s forwards;
+      }
     }
   }
 }
@@ -231,13 +421,23 @@ h2
     width: 110%;
   }
 
-    &:hover
-    {
-      box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
-      background-color: $white-background;
-      animation: moving-button 0.9s ease-in-out;
-      color: $secondary-color;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
+    background-color: $white-background;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10%;
+      left: -10%;
+      right: -10%;
+      top: -10%;
+      background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+      transform: translate(-5em, 7.5em);
+      animation: moving-button-white 1s forwards;
     }
+  }
 
     & p
     {
@@ -527,14 +727,19 @@ main
     .dessert
     {
       padding-left: 5%;
-      animation: big__entry 1.5s ease-in-out;
+      
+      @for $i from 1 through length($menu) {
+        #menu-#{nth($menu, $i)}
+        {
+          animation: big__entry $animation-delay * $i 1.5s ease-in-out;
+        }
+      }
   
       @media all and (min-width: $breakpoint-tablette){
         display: flex;
       }
     }
     
-
     .container-command
     {
         display: flex;
@@ -629,16 +834,13 @@ footer
   }
 }
 
-@keyframes loading {
-  5% {background-color: $primary-color; transform: rotate(-3deg);}
-  50% {background-color: $secondary-color; transform: rotate(3deg);}
-  100% {background-color: $primary-color; transform: rotate(-3deg);}    
-}
 
 @keyframes moving-button {
-  0% {font-size: 1.1em;}
-  50% {font-size: 0.9em;}
-  100% {font-size: 1.1em;}
+  100% {transform: translate(1em, -7em);}
+}
+
+@keyframes moving-button-white {
+  100% {transform: translate(1em, -2em);}
 }
 
 @keyframes heart-color {
@@ -653,5 +855,5 @@ footer
 
 @keyframes big__entry {
   from {transform: translateX(9999px);}
-  to {transform: translateX(Opx);}
+  to {transform: translateX(1px);}
 }
