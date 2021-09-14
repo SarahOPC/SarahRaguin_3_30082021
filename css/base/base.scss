@@ -730,19 +730,29 @@ main
     }
     
 
-    .mealstarter,
-    .meal,
-    .dessert
+    .slider-1
+    {
+      animation-delay: 1s;
+    }
+    .slider-2
+    {
+      animation-delay: 2s;
+    }
+    .slider-3
+    {
+      animation-delay: 3s;
+    }
+
+    .slider-1,
+    .slider-2,
+    .slider-3
     {
       padding-left: 5%;
-      
-      @for $i from 1 through length($menu) {
-        #menu-#{nth($menu, $i)}
-        {
-          animation: big__entry $animation-delay * $i 1.5s ease-in-out;
-        }
-      }
-  
+      animation-name: big__entry;
+      animation-duration: 1s;
+      animation-iteration-count:1;
+      animation-fill-mode: both;
+
       @media all and (min-width: $breakpoint-tablette){
         display: flex;
       }
