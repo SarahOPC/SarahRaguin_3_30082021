@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: hidden;
   animation: go-away 2s 4.3s forwards;
 
   .box {
@@ -101,8 +102,8 @@
 }
 
 @keyframes go-away {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
+  0% {opacity: 1; max-height: 1500px;}
+  100% {opacity: 0; max-height: 0px;}
 }
 
 @keyframes mainBlock {
@@ -229,6 +230,7 @@ header
     background-color: $white-background;
     font-size: 2.2em;
     margin-block-end: 0.3em;
+    margin-block-start: 0em;
 
     &:hover
     {
@@ -414,7 +416,6 @@ h2
     margin-top: 7%;
     box-shadow: 0em 0.4em 0.5em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
     position: relative;
-    overflow: hidden;
     padding-top: 7%;
     padding-bottom: 7%;
     padding-left: 7%;
@@ -446,7 +447,12 @@ h2
       transform: translate(-5em, 7.5em);
       animation: moving-button-white 1s forwards;
     }
-
+    
+    & p
+    {
+      animation: roll-over 0.9s ease-in-out;
+    }
+    
     .filter-icon
     {
       color: $primary-color;
@@ -465,11 +471,6 @@ h2
       font-size: 0.9em;
       color: $white-background;
       font-weight: 100;
-
-      &:hover
-      {
-        animation: moving-button 0.9s ease-in-out;
-      }
 
       @media all and (min-width: $breakpoint-tablette){
         display: none;
@@ -676,7 +677,12 @@ main
       {
         cursor: pointer;
         box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
-        
+
+        & + .together, & p
+        {
+          flex-shrink: 1;
+        }
+
         .green-card
         {
           position: absolute;
@@ -695,11 +701,6 @@ main
             display: block;
             animation: roll-over 0.5s 0.7s;
           }
-        }
-
-        &::before
-        {
-          animation: rotation 0.5s;
         }
       }
         
