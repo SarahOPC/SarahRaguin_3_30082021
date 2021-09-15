@@ -414,6 +414,7 @@ h2
     margin-top: 7%;
     box-shadow: 0em 0.4em 0.5em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
     position: relative;
+    overflow: hidden;
     padding-top: 7%;
     padding-bottom: 7%;
     padding-left: 7%;
@@ -444,6 +445,11 @@ h2
       background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
       transform: translate(-5em, 7.5em);
       animation: moving-button-white 1s forwards;
+    }
+
+    .filter-icon
+    {
+      color: $primary-color;
     }
   }
 
@@ -653,11 +659,50 @@ main
       border: 0em solid $white-background;
       box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
       margin-top: 5%;
+      margin-right: 3%;
       border-radius: 1.5em;
       background-color: $white-background;
       width: 91%;
       padding-left: 3%;
+      position: relative;
+      overflow: hidden;
 
+    .fa-check-circle
+    {
+      display: none;
+    }
+
+      &:hover
+      {
+        cursor: pointer;
+        box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
+        
+        .green-card
+        {
+          position: absolute;
+          right: -3%;
+          top: -11.5%;
+          transition: left;
+          color: white;
+          background-color: $tertiary-color;
+          padding: 1.5em;
+          padding-left: 0.9em;
+          font-size: 2em;
+          animation: check 1s;
+          
+          .fa-check-circle
+          {
+            display: block;
+            animation: roll-over 0.5s 0.7s;
+          }
+        }
+
+        &::before
+        {
+          animation: rotation 0.5s;
+        }
+      }
+        
       .together
       {
         display: flex;
@@ -737,7 +782,6 @@ main
       }
     }
     
-
     .slider-1
     {
       animation-delay: 0.15s;
@@ -782,6 +826,7 @@ main
         margin-top: 3%;
         margin-bottom: 17%;
         position: relative;
+        overflow: hidden;
         
         @media all and (min-width: $breakpoint-tablette){
           margin-bottom: 5%;
@@ -897,4 +942,14 @@ footer
 @keyframes big__entry {
   from {transform: translateX(9999px);}
   to {transform: translateX(1px);}
+}
+
+@keyframes check {
+  0% {transform: translate(1500px);}
+  100% {transform: translate(1px);}
+}
+
+@keyframes roll-over {
+  0% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
 }
