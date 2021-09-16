@@ -589,7 +589,8 @@ main
 
   .fas.fa-heart
   {
-    color: $secondary-color;
+    background: linear-gradient($secondary-color, $darken-secondary-color);
+    background-clip: text;
     font-size: 1.2em;
   }
 
@@ -597,6 +598,10 @@ main
   {
     color: $secondary-color;
     bottom: -15%;
+    display: block;
+    background: -webkit-linear-gradient($secondary-color,$darken-secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .get-transparent
