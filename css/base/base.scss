@@ -699,6 +699,8 @@ main
           padding: 1.5em;
           padding-left: 0.9em;
           font-size: 2em;
+          /*transform: translateX(-3em);
+          transition: transform 3s;*/
           animation: check 1s;
           
           .fa-check-circle
@@ -707,6 +709,12 @@ main
             animation: roll-over 0.5s 0.7s;
           }
         }
+      }
+
+      .green-card
+      {
+        transform: translateX(3em);
+        transition: transform 3s;
       }
         
       .together
