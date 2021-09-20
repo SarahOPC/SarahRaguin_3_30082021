@@ -707,7 +707,6 @@ main
           transition: left;
           animation: check 0.5s alternate both;
           
-                    
           .fa-check-circle
           {
             display: block;
@@ -719,6 +718,11 @@ main
         {
           transform: translateX(-6em);
           transition: transform 0.5s ease-in-out;
+        }
+
+        .item.infos p, .item.infos.details
+        {
+          width: calc(70%);
         }
       }
 
@@ -737,19 +741,21 @@ main
 
           & p
           {
+            width: calc(100%);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
           }
-        }
-
-        .details
-        {
-          font-size: 0.9em;
-          padding-bottom: 5%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+          
+          .details
+          {
+            width: calc(100%);
+            font-size: 0.9em;
+            padding-bottom: 5%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
         }
 
         & p
@@ -892,8 +898,8 @@ main
             content: "";
             position: absolute;
             bottom: 67%;
-            left: -10%;
-            right: -30%;
+            left: -30%;
+            right: -50%;
             top: -10%;
             background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
             transform: translate(-4.5em, 2.5em);
