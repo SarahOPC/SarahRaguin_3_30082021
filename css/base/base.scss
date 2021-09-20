@@ -664,8 +664,7 @@ main
     
     .plate
     {
-      display: flex;
-      justify-content: space-between;
+      display: inline-block;
       padding-bottom: 1%;
       border: 0em solid $white-background;
       box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
@@ -673,17 +672,23 @@ main
       margin-right: 3%;
       border-radius: 1.5em;
       background-color: $white-background;
-      width: 91%;
+      width: calc(91%);
       padding-left: 2%;
       position: relative;
       overflow: hidden;
-      align-items: baseline;
-      text-overflow: ellipsis;
-      white-space: nowrap;
       
       .green-card
       {
-        
+        position: absolute;
+        right: -22%;
+        top: 8%;
+        transition: right;
+        color: white;
+        background-color: $tertiary-color;
+        padding: 1.5em;
+        padding-left: 0.9em;
+        font-size: 2em;
+
         .fa-check-circle
         {
           display: none;
@@ -697,24 +702,23 @@ main
         
         .green-card
         {
-          position: absolute;
           right: -3%;
           top: -11.5%;
           transition: left;
-          color: white;
-          background-color: $tertiary-color;
-          padding: 1.5em;
-          padding-left: 0.9em;
-          font-size: 2em;
-          animation: check 1s;
-          animation-direction: alternate;          
+          animation: check 0.5s alternate both;
           
+                    
           .fa-check-circle
           {
             display: block;
-            animation: roll-over 0.5s 0.7s;
-
+            animation: roll-over 0.3s 0.5s;
           }
+        }
+
+        .price
+        {
+          transform: translateX(-6em);
+          transition: transform 0.5s ease-in-out;
         }
       }
 
@@ -724,17 +728,28 @@ main
         font-weight: 700;
         display: flex;
         align-items: flex-end;
+        overflow: hidden;
         
         .infos
         {
           display: flex;
           flex-direction: column;
+
+          & p
+          {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
         }
 
         .details
         {
           font-size: 0.9em;
           padding-bottom: 5%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
 
         & p
@@ -747,7 +762,7 @@ main
       {
         font-weight: 700;
         position: absolute;
-        bottom: 21%;
+        bottom: 22%;
         right: 6%;
       }
     }      
