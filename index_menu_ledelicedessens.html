@@ -8,7 +8,9 @@
     <meta name="keywords" content="HTML, CSS">
     <meta name="author" content="ohmyfood">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+    </style>
     <script src="https://kit.fontawesome.com/e98fa15a44.js" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="./css/styles.css" />
 </head>
@@ -24,95 +26,138 @@
             class="img-menu" />
 
         <div class="container">
-            <div class="name-restaurant">Le délice des sens<i class="far fa-heart"></i></div>
-            <div class="title-menu">ENTREES</div>
+            <p class="name-restaurant">Le délice des sens
+                <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-heart fa-stack-1x fa-inverse"></i>
+                    <i class="far fa-heart get-transparent"></i>
+                </span>
+            </p>
+
+            <p class="title-menu">ENTREES</p>
             <div class="slider-1">
-                <div class="item">
-                    <p>Tartare de thon</p>
-                    <div class="together">
-                        <div class="details">Assaisonné au yuzu</div>
-                        <div class="price">25€</div>
+                <div class="plate">
+                    <div class="item">
+                        <div class="infos">
+                            <p>Tartare de thon</p>
+                            <div class="details">Assaisonné au yuzu</div>
+                        </div>
+                    </div>
+                    <div class="price">25€</div>
+                    <div class="green-card">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                 </div>
-                <i class="fas fa-check-circle"></i>
 
-                <div class="item">
-                    <p>Bouchée de homard croustillant</p>
-                    <div class="together">
-                        <div class="details">Et sa farandole de petits légumes</div>
-                        <div class="price">35€</div>
+                <div class="plate">
+                    <div class="item">
+                        <div class="infos">
+                            <p>Bouchée de homard croustillant</p>
+                            <div class="details">Et sa farandole de petits légumes</div>
+                        </div>
+                    </div>
+                    <div class="price">35€</div>
+                    <div class="green-card">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                 </div>
-                <i class="fas fa-check-circle"></i>
 
-                <div class="item">
-                    <p>Velouté de cèpes</p>
-                    <div class="together">
-                        <div class="details">Aux truffes</div>
-                        <div class="price">20€</div>
+                <div class="plate">
+                    <div class="item">
+                        <div class="infos">
+                            <p>Velouté de cèpes</p>
+                            <div class="details">Aux truffes</div>
+                        </div>
+                    </div>
+                    <div class="price">20€</div>
+                    <div class="green-card">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                 </div>
-                <i class="fas fa-check-circle"></i>
             </div>
 
-            <div class="title-menu">PLATS</div>
+            <p class="title-menu">PLATS</p>
             <div class="slider-2">
-                <div class="item">
-                    <p>Poulet rôti aux herbes de Provence</p>
-                    <div class="together">
-                        <div class="details">Et sa crème de truffe</div>
-                        <div class="price">40€</div>
+                <div class="plate">
+                    <div class="item">
+                        <div class="infos">
+                            <p>Poulet rôti aux herbes de Provence</p>
+                            <div class="details">Et sa crème de truffe</div>
+                        </div>
+                    </div>
+                    <div class="price">40€</div>
+                    <div class="green-card">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                 </div>
-                <i class="fas fa-check-circle"></i>
 
-                <div class="item">
-                    <p>Langouste rôtie</p>
-                    <div class="together">
-                        <div class="details">Et ses légumes de saison</div>
-                        <div class="price">35€</div>
+                <div class="plate">
+                    <div class="item">
+                        <div class="infos">
+                            <p>Langouste rôtie</p>
+                            <div class="details">Et ses légumes de saison</div>
+                        </div>
+                    </div>
+                    <div class="price">35€</div>
+                    <div class="green-card">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                 </div>
-                <i class="fas fa-check-circle"></i>
 
-                <div class="item">
-                    <p>Côte de boeuf Angus</p>
-                    <div class="together">
-                        <div class="details">Et sa purée de panais</div>
-                        <div class="price">44€</div>
+                <div class="plate">
+                    <div class="item">
+                        <div class="infos">
+                            <p>Côte de boeuf Angus</p>
+                            <div class="details">Et sa purée de panais</div>
+                        </div>
+                    </div>
+                    <div class="price">44€</div>
+                    <div class="green-card">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                 </div>
-                <i class="fas fa-check-circle"></i>
             </div>
 
-            <div class="title-menu">DESSERTS</div>
+            <p class="title-menu">DESSERTS</p>
             <div class="slider-3">
-                <div class="item">
-                    <p>Farandole de desserts</p>
-                    <div class="together">
-                        <div class="details">Du chef</div>
-                        <div class="price">18€</div>
+                <div class="plate">
+                    <div class="item">
+                        <div class="infos">
+                            <p>Farandole de desserts</p>
+                            <div class="details">Du chef</div>
+                        </div>
+                    </div>
+                    <div class="price">18€</div>
+                    <div class="green-card">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                 </div>
-                <i class="fas fa-check-circle"></i>
 
-                <div class="item">
-                    <p>Crème brulée</p>
-                    <div class="together">
-                        <div class="details">Revisitée</div>
-                        <div class="price">22€</div>
+                <div class="plate">
+                    <div class="item">
+                        <div class="infos">
+                            <p>Crème brulée</p>
+                            <div class="details">Revisitée</div>
+                        </div>
+                    </div>
+                    <div class="price">22€</div>
+                    <div class="green-card">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                 </div>
-                <i class="fas fa-check-circle"></i>
 
-                <div class="item">
-                    <p>Tiramisu</p>
-                    <div class="together">
-                        <div class="details">À la noisette</div>
-                        <div class="price">23€</div>
+                <div class="plate">
+                    <div class="item">
+                        <div class="infos">
+                            <p>Tiramisu</p>
+                            <div class="details">À la noisette</div>
+                        </div>
+                    </div>
+                    <div class="price">23€</div>
+                    <div class="green-card">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                 </div>
-                <i class="fas fa-check-circle"></i>
 
             </div>
             <div class="container-command">
@@ -120,6 +165,7 @@
             </div>
         </div>
     </main>
+
     <footer>
         <p class="logo">ohmyfood</p>
         <a href="#" target="_blank"><i class="fas fa-utensils"></i>Proposer un restaurant</a>
