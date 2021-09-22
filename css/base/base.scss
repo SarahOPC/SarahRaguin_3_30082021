@@ -624,9 +624,9 @@ main
       box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
       margin-top: 5%;
       margin-right: 3%;
+      width: 91%;
       border-radius: 1.5em;
       background-color: $white-background;
-      width: calc(91%);
       padding-left: 2%;
       position: relative;
       overflow: hidden;
@@ -646,11 +646,11 @@ main
         @media all and (min-width: $breakpoint-tablette) {
           right: -27%;
         }
-
+        
         @media all and (min-width: $breakpoint-desktop) {
           right: -27%;
         }
-
+        
         .fa-check-circle
         {
           display: none;
@@ -661,14 +661,14 @@ main
       {
         cursor: pointer;
         box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
-
+        
         .infos
-          {
-            width: calc(70%);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
+        {
+          width: calc(70%);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
         
         .green-card
         {
@@ -676,7 +676,7 @@ main
           top: -7%;
           transition: left;
           animation: check 0.5s alternate both;
-
+          
           @media all and (min-width: $breakpoint-tablette) {
             padding-left: 0.5em;
             padding-right: 0.7em;
@@ -688,12 +688,12 @@ main
             animation: roll-over 0.3s 0.5s;
           }
         }
-
+        
         .price
         {
           transform: translateX(-6em);
           transition: transform 0.5s ease-in-out;
-
+          
           @media all and (min-width: $breakpoint-tablette) {
             transform: translateX(-3.5em);
             transition: transform 0.5s ease-in-out;
@@ -713,7 +713,10 @@ main
         display: flex;
         align-items: flex-end;
         overflow: hidden;
-
+        width: calc(85%);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        
         &:hover
         {
           width: calc(75%);
