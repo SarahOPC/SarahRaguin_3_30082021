@@ -216,6 +216,7 @@ input
   background-color: transparent;
   font-size: 1.1em;
   font-weight: 700;
+  width: 7.5em;
   
   @media all and (min-width: $breakpoint-tablette){
     text-align: center;
@@ -235,6 +236,8 @@ input
   padding-top: 3%;
   padding-bottom: 3%;
   box-shadow: inset 0em 0.1em lightgrey;
+  display: flex;
+  justify-content: center;
 
   @media all and (min-width: $breakpoint-tablette){
     background-color: transparent;
@@ -249,7 +252,6 @@ input
 
 .fa-map-marker-alt
 {
-  padding-left: 24%;
   background-color: transparent;
 
   @media all and (min-width: $breakpoint-tablette){
@@ -470,6 +472,11 @@ main
     margin-top: 9%;
     cursor: pointer;
 
+    .card
+    {
+      display: flex;
+    }
+
     &:hover
     {
       box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
@@ -496,6 +503,7 @@ main
     {
       padding-left: 4%;
       line-height: 150%;
+      flex-basis: 65%;
 
       .title
       {
@@ -513,32 +521,18 @@ main
 
   .fa-stack
   {
-    position: absolute;
-    bottom: 4%;
-    right: 4%;
     font-size: 1.5em;
-
-    @media all and (min-width: $breakpoint-tablette) {
-      bottom: 4%;
-    }
-  }
-
-  .fas.fa-circle
-  {
-    color: $grey-background;
-    font-size: 0.7em;
-    top: 57%;
-    left: 22%;
+    line-height: 2.4em;
+    padding-left: 8%;
+    padding-top: 2%;
   }
 
   .far.fa-heart
   {
     color: #000;
     background-color: $grey-background;
-    position: absolute;
-    bottom: 8%;
-    right: 26%;
     font-size: 1.2em;
+    border-radius: 2em;
   }
 
   .fas.fa-heart
@@ -551,8 +545,6 @@ main
   .fa-stack-1x.fa-inverse
   {
     color: $secondary-color;
-    bottom: -15%;
-    display: block;
     background: -webkit-linear-gradient($secondary-color,$darken-secondary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -613,6 +605,13 @@ main
     padding-bottom: 1%;
     padding-top: 5%;
     border-radius: 2.5em 2.5em 0em 0em;
+
+    .card-menu
+    {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
     
     .plate
     {
@@ -663,7 +662,7 @@ main
         
         .infos
         {
-          width: calc(70%);
+          width: calc(50%);
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -678,7 +677,7 @@ main
           
           @media all and (min-width: $breakpoint-tablette) {
             padding-left: 0.5em;
-            padding-right: 0.7em;
+            padding-right: 0.9em;
           }
           
           .fa-check-circle
@@ -699,10 +698,7 @@ main
           }
         }
 
-        .item.infos p, .item.infos.details
-        {
-          width: calc(70%);
-        }
+        
       }
 
       .item
@@ -711,14 +707,14 @@ main
         font-weight: 700;
         display: flex;
         align-items: flex-end;
-        overflow: hidden;
-        width: calc(85%);
+        width: calc(75%);
         text-overflow: ellipsis;
         white-space: nowrap;
+        overflow: hidden;
         
         &:hover
         {
-          width: calc(75%);
+          width: calc(60%);
         }
         
         .infos
@@ -732,7 +728,7 @@ main
 
           & p
           {
-            width: calc(100%);
+            width: calc(75%);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -740,7 +736,7 @@ main
           
           .details
           {
-            width: calc(100%);
+            width: calc(75%);
             font-size: 0.9em;
             padding-bottom: 5%;
             overflow: hidden;
@@ -773,57 +769,23 @@ main
     {
       font-size: 1.9em;
       font-style: italic;
-      position: relative;
       padding-top: 3%;
       padding-left: 6%;
       
       .fa-stack
       {
-        position: absolute;
-        bottom: -5%;
-        right: -11%;
         font-size: 1.5em;
-        padding-right: 2em;
-        
-        
-        @media all and (min-width: $breakpoint-tablette) {
-          right: -23%;  
-        }
-        
-        @media all and (min-width: $breakpoint-desktop) {
-          bottom: 4%;
-          right: -2%;
-        }
+        padding-right: 3em;
       }
       
       .fa-stack-1x.fa-inverse
       {
         font-size: 0.7em;
-        bottom: -26%;
-        left: 18%;
-        
-        @media all and (min-width: $breakpoint-tablette) {
-          bottom: -25%;
-          left: -252%;
-        }
-        
-        @media all and (min-width: $breakpoint-desktop) {
-          left: -184%;
-        }
       }
       
       .far.fa-heart
       {
         font-size: 0.7em;
-        left: 60%;
-        
-        @media all and (min-width: $breakpoint-tablette) {
-          left: -210%;
-        }
-        
-        @media all and (min-width: $breakpoint-desktop) {
-          left: -143%;
-        }
       }
 
       &:hover
@@ -833,20 +795,8 @@ main
       }
 
       @media all and (min-width: $breakpoint-tablette){
-        text-align: left;
-        padding-left: 25%;
-        padding-top: 0%;
-      }
-    }
-
-    .far.fa-heart
-    {
-      font-size: 0.8em;
-      
-      @media all and (min-width: $breakpoint-desktop){
-        right: auto;
-        margin-left: 1.5%;
-        margin-bottom: 0.2%;
+        padding-left: 30%;
+        vertical-align: bottom;
       }
     }
 
