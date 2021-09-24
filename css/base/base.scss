@@ -178,7 +178,6 @@ header
     font-size: 2.2em;
     margin-block-end: 0.3em;
     margin-block-start: 0em;
-    padding-right: 5%;
 
     &:hover
     {
@@ -633,7 +632,7 @@ main
       .green-card
       {
         position: absolute;
-        right: -26%;
+        right: -40%;
         top: 8%;
         transition: right;
         color: white;
@@ -643,11 +642,11 @@ main
         font-size: 2em;
         
         @media all and (min-width: $breakpoint-tablette) {
-          right: -27%;
+          right: -50%;
         }
         
         @media all and (min-width: $breakpoint-desktop) {
-          right: -27%;
+          right: -45%;
           height: 2em;
         }
         
