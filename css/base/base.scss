@@ -448,6 +448,7 @@ h2
     {
       padding-right: 5%;
       color: $color-filter-icon;
+      display: flex;
     }
   }
 }
@@ -687,7 +688,7 @@ main
         
         .infos
         {
-          width: calc(50%);
+          width: calc(90%);
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -732,14 +733,14 @@ main
         font-weight: 700;
         display: flex;
         align-items: flex-end;
-        width: calc(75%);
+        width: calc(95%);
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
         
         &:hover
         {
-          width: calc(60%);
+          width: calc(70%);
         }
         
         .infos
