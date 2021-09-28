@@ -1,14 +1,26 @@
+@mixin simple-shadow($color:$grey-shadow)
+{
+    box-shadow: 0.3em 0.3em 0.5em $color;
+}
 
-/*
-@mixin tablette-only {
-    @media  screen and (max-width: map-get($breakpoint-tablette, tablette)){
+@mixin btn-shadow($color:$grey-shadow)
+{
+    box-shadow: 0em 0.4em 0.5em $color, 0 -0.05em 0.5em $color;
+}
 
+@mixin btn-shadow-hover($color:$grey-shadow)
+{
+    box-shadow: 0.5em 0.9em 0.9em $color, 0 -0.05em 0.5em $color;
+}
+
+@mixin tablette {
+    @media all and (min-width: $breakpoint-tablette) {
+        @content;
     }
 }
 
-@mixin desktop-only {
-    @media screen and (max-width: map-get($breakpoint-desktop, desktop)) {
-        
+@mixin desktop {
+    @media all and (min-width: $breakpoint-desktop) {
+        @content;
     }
 }
-*/

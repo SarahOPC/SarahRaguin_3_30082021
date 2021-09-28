@@ -202,7 +202,8 @@ header
 
 section
 {
-  @media all and (min-width: $breakpoint-tablette){
+  @include tablette
+  {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -218,7 +219,8 @@ input
   font-weight: 700;
   width: 7.5em;
   
-  @media all and (min-width: $breakpoint-tablette){
+  @include tablette
+  {
     text-align: center;
     width: 75%;
   }
@@ -238,15 +240,18 @@ input
   box-shadow: inset 0em 0.1em lightgrey;
   display: flex;
   justify-content: center;
-
-  @media all and (min-width: $breakpoint-tablette){
+  
+  @include tablette
+  {
     background-color: transparent;
     box-shadow: inset 0em 0em transparent;
     width: 20%;
+    flex-direction: column;
   }
-
-  @media all and (min-width: $breakpoint-desktop){
-    width: 15%;
+  
+  @include desktop
+  {
+    width: 17.5%;
   }
 }
 
@@ -254,10 +259,11 @@ input
 {
   background-color: transparent;
 
-  @media all and (min-width: $breakpoint-tablette){
-    padding-left: 5%;
+  @include tablette
+  {
     font-size: 5em;
     padding-bottom: 30%;
+    padding-right: 15%;
   }
 }
 
@@ -279,7 +285,8 @@ h2
   font-size: 1.1em;
   line-height: 100%;
   
-  @media all and (min-width: $breakpoint-tablette){
+  @include tablette
+  {
     line-height: 500%;
   }
 }
@@ -296,7 +303,8 @@ h2
   text-align: -moz-center;
   padding-top: 7%;
 
-  @media all and (min-width: $breakpoint-tablette){
+  @include tablette
+  {
     padding-left: 0%;
     padding-bottom: 15%;
     background-color: $white-background;
@@ -306,16 +314,16 @@ h2
   & p
   {
     font-size: 1.1em;
-    border-radius: 3em;
     color: $white-background;
+    border-radius: 3em;
     font-weight: 500;
     background: linear-gradient($secondary-color, $darken-secondary-color);
-    box-shadow: 0em 0.4em 0.5em $grey-shadow;
+    @include simple-shadow;
     width: fit-content;
     overflow: hidden;
     padding: 3% 7%;
     position: relative;
-    
+   
     &:hover
     {
       cursor: pointer;
@@ -360,28 +368,38 @@ h2
     border-radius: 1em;
     margin-left: 9%;
     margin-top: 7%;
-    box-shadow: 0em 0.4em 0.5em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
+    @include btn-shadow;
     position: relative;
     padding-top: 7%;
     padding-bottom: 7%;
     padding-left: 7%;
     width: 75%;
+    @function text-color($background-color: background-color)
+    {
+      @if (lightness($background-color) < 40%) {
+          @return $black-color;
+      } @else {
+          @return $white-background;
+      }
+    }
     
-  @media all and (min-width: $breakpoint-tablette){
+  @include tablette
+  {
     margin-left: 0%;
     width: 95%;
     margin-bottom: 25%;
   }
 
-  @media all and (min-width: $breakpoint-desktop){
+  @include desktop
+  {
     width: 110%;
   }
 
   &:hover
   {
     cursor: pointer;
-    box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
-    background-color: $white-background;
+    @include btn-shadow-hover;
+    background-color: lighten($color: $grey-background, $amount: 10);
     
     &::after
     {
@@ -420,7 +438,8 @@ h2
       color: $white-background;
       font-weight: 100;
 
-      @media all and (min-width: $breakpoint-tablette){
+      @include tablette
+      {
         display: none;
       }
     }
@@ -445,14 +464,16 @@ main
     padding-top: 7%;
     padding-bottom: 17%;
 
-    @media all and (min-width: $breakpoint-tablette){
+    @include tablette
+    {
       padding-top: 3%;
       padding-bottom: 7%;
     }
 
     .item-accueil
     {
-      @media all and (min-width: $breakpoint-tablette){
+      @include tablette
+      {
         display: flex;
         padding-top: 1%;
       }
@@ -462,7 +483,7 @@ main
   .resto
   {
     border: 0em solid $white-background;
-    box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
+    @include simple-shadow;
     margin-top: 5%;
     border-radius: 1.5em;
     width: 95%;
@@ -479,7 +500,7 @@ main
 
     &:hover
     {
-      box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
+      @include btn-shadow-hover;
       animation: moving__title 0.3s ease-in-out;
     }
 
@@ -565,7 +586,8 @@ main
     font-weight: 700;
     padding-left: 7%;
 
-    @media all and (min-width: $breakpoint-tablette){
+    @include tablette
+    {
       line-height: 100%;
     }
   }
@@ -594,7 +616,8 @@ main
     position: relative;
     border-radius: 0em;
     
-    @media all and (min-width: $breakpoint-tablette){
+    @include tablette
+    {
       margin-bottom: -4%;
       height: 25em;
     }
@@ -618,7 +641,7 @@ main
       display: inline-block;
       padding-bottom: 1%;
       border: 0em solid $white-background;
-      box-shadow: 0.3em 0.3em 0.5em $grey-shadow;
+      @include btn-shadow;
       margin-top: 5%;
       margin-right: 3%;
       width: 91%;
@@ -640,11 +663,13 @@ main
         padding-left: 0.9em;
         font-size: 2em;
         
-        @media all and (min-width: $breakpoint-tablette) {
+        @include tablette
+        {
           right: -50%;
         }
         
-        @media all and (min-width: $breakpoint-desktop) {
+        @include desktop
+        {
           right: -45%;
           height: 2em;
         }
@@ -658,7 +683,7 @@ main
       &:hover
       {
         cursor: pointer;
-        box-shadow: 0.5em 0.9em 0.9em $grey-shadow, 0 -0.05em 0.5em $grey-shadow;
+        @include btn-shadow-hover;
         
         .infos
         {
@@ -675,7 +700,8 @@ main
           transition: left;
           animation: check 0.5s alternate both;
           
-          @media all and (min-width: $breakpoint-tablette) {
+          @include tablette
+          {
             padding-left: 0.5em;
             padding-right: 0.9em;
           }
@@ -692,13 +718,12 @@ main
           transform: translateX(-6em);
           transition: transform 0.5s ease-in-out;
           
-          @media all and (min-width: $breakpoint-tablette) {
+          @include tablette
+          {
             transform: translateX(-3.5em);
             transition: transform 0.5s ease-in-out;
           }
         }
-
-        
       }
 
       .item
@@ -722,7 +747,8 @@ main
           display: flex;
           flex-direction: column;
 
-          @media all and (min-width: $breakpoint-tablette) {
+          @include tablette
+          {
             width: calc(80%);
           }
 
@@ -758,9 +784,10 @@ main
         bottom: 16%;
         right: 3%;
 
-        @media all and (min-width: $breakpoint-tablette) {
+        @include tablette
+        {
           bottom: 22%;
-          right: 6%;
+          right: 8%;
         }
       }
     }      
@@ -794,7 +821,8 @@ main
         animation-iteration-count: 2;
       }
 
-      @media all and (min-width: $breakpoint-tablette){
+      @include tablette
+      {
         padding-left: 30%;
         vertical-align: bottom;
       }
@@ -815,7 +843,8 @@ main
         top: 100%;
         left: 6%;
 
-        @media all and (min-width: $breakpoint-tablette){
+        @include tablette
+        {
           width: 4%;
         }
       }
@@ -842,7 +871,8 @@ main
       animation-iteration-count:1;
       animation-fill-mode: both;
 
-      @media all and (min-width: $breakpoint-tablette){
+      @include tablette
+      {
         display: flex;
       }
     }
@@ -857,7 +887,7 @@ main
         border-radius: 3em;
         color: $white-background;
         background: linear-gradient($secondary-color, $darken-secondary-color);
-        box-shadow: 0em 0.4em 0.5em $grey-shadow;
+        @include simple-shadow;
         width: fit-content;
         padding: 1% 2%;
         margin-top: 12%;
@@ -865,7 +895,8 @@ main
         position: relative;
         overflow: hidden;
         
-        @media all and (min-width: $breakpoint-tablette){
+        @include tablette
+        {
           margin-bottom: 5%;
           margin-top: 7%;
           font-size: 1.1em;
@@ -902,7 +933,8 @@ footer
   padding-top: 10%;
   padding-bottom: 12%;
 
-  @media all and (min-width: $breakpoint-tablette){
+  @include tablette
+  {
     padding-top: 3%;
     padding-bottom: 3%;
     flex-direction: row;
@@ -921,7 +953,8 @@ footer
   {
     margin-top: 5%;
 
-    @media all and (min-width: $breakpoint-tablette){
+    @include tablette
+    {
       margin-top: 1%;
     }
   }
@@ -933,7 +966,8 @@ footer
     padding-top: 5%;
     background-color: $footer-grey-background;
 
-    @media all and (min-width: $breakpoint-tablette){
+    @include tablette
+    {
       padding-top: 1%;
       height: fit-content;
     }
@@ -945,7 +979,8 @@ footer
     height: auto;
     background-color: $footer-grey-background;
 
-    @media all and (min-width: $breakpoint-tablette){
+    @include tablette
+    {
       width: 12%;
     }
   }
@@ -960,7 +995,8 @@ footer
     padding-right: 5%;
     background-color: $footer-grey-background;
 
-    @media all and (min-width: $breakpoint-tablette){
+    @include tablette
+    {
       padding-right: 3%;
     }
   }
