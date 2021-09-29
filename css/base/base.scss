@@ -149,6 +149,11 @@
 }
 
 /*----------------------------------------------------------------------------------------------------------------------*/
+body
+{
+  overflow-x: hidden;
+}
+
 section, main, footer
 {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
@@ -654,8 +659,8 @@ main
       
       .green-card
       {
+        display: none;
         position: absolute;
-        right: -40%;
         top: 8%;
         transition: right;
         color: white;
@@ -696,6 +701,7 @@ main
         
         .green-card
         {
+          display: block;
           right: -3%;
           top: -7%;
           transition: left;
@@ -763,7 +769,7 @@ main
           
           .details
           {
-            width: calc(100%);
+            width: calc(75%);
             font-size: 0.9em;
             padding-bottom: 5%;
             overflow: hidden;
