@@ -755,7 +755,7 @@ main
 
           & p
           {
-            width: calc(75%);
+            width: calc(100%);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -763,7 +763,7 @@ main
           
           .details
           {
-            width: calc(75%);
+            width: calc(100%);
             font-size: 0.9em;
             padding-bottom: 5%;
             overflow: hidden;
