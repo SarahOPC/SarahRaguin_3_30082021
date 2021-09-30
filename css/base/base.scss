@@ -154,6 +154,11 @@ body
   overflow-x: hidden;
 }
 
+.container-loading {
+  position: fixed;
+  z-index: 2;
+}
+
 section, main, footer
 {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
