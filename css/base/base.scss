@@ -661,6 +661,7 @@ main
       padding-left: 2%;
       position: relative;
       overflow: hidden;
+      height: 6em;
       
       .green-card
       {
@@ -673,6 +674,7 @@ main
         padding: 1.5em;
         padding-left: 0.9em;
         font-size: 2em;
+        height: 6em;
         
         @include tablette
         {
@@ -711,6 +713,7 @@ main
           top: -7%;
           transition: left;
           animation: check 0.5s alternate both;
+          height: 6em;
           
           @include tablette
           {
